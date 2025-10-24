@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Prof. Maicon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="character">
+            <img src="https://via.placeholder.com/150x200?text=Prof.+Maicon" alt="Prof. Maicon">
+        </div>
+        <h1>Jogo do Prof. Maicon</h1>
+        <div id="start-screen">
+            <button id="start-button">Iniciar Jogo</button>
+        </div>
+        <div id="game-screen" class="hidden">
+            <div id="score">Pontuação: <span id="score-value">0</span></div>
+            <div id="question-number">Questão <span id="current-question">1</span> de 20</div>
+            <div id="timer">Tempo: <span id="time-left">60</span>s</div>
+            <div id="question"></div>
+            <div id="options"></div>
+            <div id="help-options">
+                <button id="skip">Pular (<span id="skip-count">3</span>)</button>
+                <button id="consult">Consultar Caderno (<span id="consult-count">2</span>)</button>
+                <button id="quit">Desistir</button>
+                <button id="god-mode">GOD MODE</button>
+            </div>
+            <button id="next-button" class="hidden">Próxima Questão</button>
+        </div>
+        <div id="end-screen" class="hidden">
+            <h2>Fim de Jogo!</h2>
+            <p>Pontuação Final: <span id="final-score"></span></p>
+            <button id="restart-button">Jogar Novamente</button>
+        </div>
+        <audio id="background-music" loop>
+            <source src="background_music.mp3" type="audio/mpeg">
+        </audio>
+        <button id="music-toggle">Ativar Música</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

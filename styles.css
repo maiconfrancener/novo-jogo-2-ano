@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: auto;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#question, #score, #question-number, #timer {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+#options button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 15px;
+    font-size: 24px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#options button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+#options button.correct {
+    animation: correct 0.5s;
+    background: #2ecc71;
+}
+
+#options button.incorrect {
+    animation: incorrect 0.5s;
+    background: #e74c3c;
+}
+
+@keyframes correct {
+    0% { background: #3498db; }
+    50% { background: #2ecc71; transform: scale(1.1); }
+    100% { background: #2ecc71; }
+}
+
+@keyframes incorrect {
+    0% { background: #3498db; transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { background: #e74c3c; transform: translateX(0); }
+}
+
+#help-options button, #start-button, #next-button, #restart-button, #music-toggle {
+    padding: 10px 20px;
+    font-size: 24px;
+    margin: 10px;
+    background: #f1c40f;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#help-options button:hover, #start-button:hover, #next-button:hover, #restart-button:hover, #music-toggle:hover {
+    background: #f39c12;
+}
+
+.hidden {
+    display: none;
+}
+
+.character {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.character img {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 36px; }
+    #question, #score, #question-number, #timer { font-size: 24px; }
+    #options button, #help-options button, #start-button, #next-button, #restart-button, #music-toggle { font-size: 20px; }
+    .character img { width: 100px; height: 133px; }
+}
